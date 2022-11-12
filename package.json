@@ -1,0 +1,11 @@
+{
+  "name": "kebe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm --prefix ./backend start ./backend & npm --prefix ./frontend start ./frontend"
+  },
+  "author": "",
+  "license": "ISC"
+}
