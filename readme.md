@@ -1,15 +1,19 @@
-# A Basic microservice app
+## A Basic microservice app
 
-## description
-a simple Microservice app including frontend and backend
+## Description
+a simple Microservice app including a Frontend and Backend
+Frontend service fetches the word “TALENT PLUS” from the backend service using an API call. 
 
-# setup
- clone repo
-  install dependencies   ``` npm install ```
+## setup
+ git clone [repo](https://github.com/kebsOps/TalentPlus.git)
  
- ## run
- run application using
+install dependencies  
+
+``` npm install ```
+ 
+ ## Run application using
+ 
  ``` npm start ```
 
 
-
+s
