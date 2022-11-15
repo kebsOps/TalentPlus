@@ -1,4 +1,4 @@
-## A Basic microservice app
+## A Basic Microservice App
 
 ## Description
 a simple Microservice app including a Frontend and Backend
