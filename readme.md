@@ -16,10 +16,10 @@ install dependencies
  ``` npm start ```
 
 
-## Install frontend ap
+## Deploy frontend app
 ``` helm install -f values.yaml frontend ./frontend ```
 
-## Deploy frontend app
+## Deploy backend app
 ``` helm install -f values.yaml backend ./backend  ```
 
 ## Deploy ingress
