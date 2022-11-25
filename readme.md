@@ -22,5 +22,5 @@ install dependencies
 ## Deploy backend app
 ``` helm install -f values.yaml backend ./backend  ```
 
-## Deploy ingress
+## Deploy ingress controller
 ``` helm install -f ingress.yaml ingress ./ingress  ```
