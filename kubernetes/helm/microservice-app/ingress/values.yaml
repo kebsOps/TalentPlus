@@ -1,0 +1,15 @@
+ingress:
+  name: ingress-service
+  replicaCount: 1
+  annotations: 
+    class: nginx
+  hosts:
+    - host: example.com
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:  
+            service:
+              name: microservice-frontend
+              port:
+                number: 3000

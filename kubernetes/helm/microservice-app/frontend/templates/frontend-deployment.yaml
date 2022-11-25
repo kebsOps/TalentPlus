@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: {{ .Values.frontendapp.name }}
+
+  labels:
+
+    app: {{ .Values.frontendapp.name }}
+
+    group: {{ .Values.frontendapp.group }}
+
+spec:
+
+  replicas: {{ .Values.frontendapp.replicaCount }}
+
+  selector:
+
+    matchLabels:
+
+      app: {{ .Values.frontendapp.name }}
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: {{ .Values.frontendapp.name }}
+
+        group: {{ .Values.frontendapp.group }}
+
+    spec:
+
+      containers:
+
+        - name: {{ .Values.frontendapp.name }}
+
+          image: {{ .Values.frontendapp.container.image }}  
+
+          ports:
+
+            - containerPort: {{ .Values.frontendapp.container.port }}
+
+          envFrom:
+
+            {{- range .Values.frontendapp.container.config }}
+
+            - configMapRef:
+
+                name: {{ .name }}
+
+            {{- end}}
+
+          env:
+
+            {{- range .Values.frontendapp.container.env}}
+
+            - name: {{ .key}}
+
+              value: {{ .value}}
+
+            {{- end}}

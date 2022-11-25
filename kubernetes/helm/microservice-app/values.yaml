@@ -1,0 +1,29 @@
+frontendapp:
+  name: microservice-frontend
+  group: frontend
+  replicaCount: 1
+  container:
+    image: kebsdev/talentplus-frontend:latest
+    port: 3000
+    config: []
+    env: 
+      - key: key
+        value: value
+  service:
+    type: ClusterIP
+    port: 3000
+
+backendapp:
+  name: microservice-backend
+  group: backend
+  replicaCount: 1
+  container:
+    image: kebsdev/talentplus-backend:latest
+    port: 3001
+    config: []
+    env: 
+      - key: key
+        value: value
+  service:
+    type: ClusterIP
+    port: 3001

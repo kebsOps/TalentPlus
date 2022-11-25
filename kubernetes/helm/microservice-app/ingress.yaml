@@ -1,0 +1,10 @@
+ingress:
+  hosts:
+    - host: example.com
+      paths:
+        - path: /
+          backend:  
+            service:
+              name: microservice-frontend
+              port:
+                number: 3000
