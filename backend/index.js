@@ -17,7 +17,7 @@ const requestListener = function (req, res) {
 const server = http.createServer(requestListener);
 
 
-server.us
+
 server.listen(3001,()=>{
     console.log(`server running on 3001`)
 });
