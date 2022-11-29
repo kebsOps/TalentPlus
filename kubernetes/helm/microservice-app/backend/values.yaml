@@ -3,7 +3,8 @@ backendapp:
   group: backend
   replicaCount: 1
   container:
-    image: kebsdev/talentplus-backend:latest
+    #image: kebsdev/talentplus-backend:latest
+    image: kebsdev/talentplus-backend-intel:latest
     port: 3001
     config: []
     env: 
