@@ -1,14 +1,17 @@
-# FROM node:lts-alpine
-# ENV NODE_ENV=production
-# WORKDIR /usr/src/app
-# COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-# # RUN npm install --production --silent && mv node_modules ../
-# COPY . .
-# EXPOSE 3000
-# RUN chown -R node /usr/src/app
-# USER node
-# CMD ["npm", "start"]
-
-FROM nginx:alpine
-COPY . /usr/share/nginx/html
- 
+FROM node:16-alpine 
+# Set the working directory to /app inside the container
+WORKDIR /app
+# Copy app files
+COPY . .
+# ==== BUILD =====
+# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+RUN npm ci 
+# Build the app
+RUN npm run build
+# ==== RUN =======
+# Set the env to "production"
+ENV NODE_ENV production
+# Expose the port on which the app will be running (3000 is the default that `serve` uses)
+EXPOSE 3000
+# Start the app
+CMD [ "npx", "serve", "build" ]
